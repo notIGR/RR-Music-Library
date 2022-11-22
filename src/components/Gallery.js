@@ -8,6 +8,7 @@ import GalleryItem from './GalleryItem'
 import { DataContext } from '../context/DataContext'
 import GalleryItem from './GalleryItem'
 
+<<<<<<< HEAD
 >>>>>>> origin/with_context
 const Gallery = () => {
     const data = useContext(DataContext)
@@ -23,6 +24,9 @@ const Gallery = (props) => {
 >>>>>>> origin/with_suspense
 =======
 >>>>>>> origin/with_context
+=======
+    const display = props.data.map((item, index) => {
+>>>>>>> origin/with_router
         return (
             <GalleryItem key={index} item={item} />
         )
