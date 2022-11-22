@@ -1,11 +1,11 @@
-import { useEffect, useState } from 'react'
-import { useParams, Link, useHistory } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import { useParams, Link, useNavigate } from 'react-router-dom'
 import Spinner from './Spinner'
 
 const ArtistView = () => {
     const { id } = useParams()
     const [artistData, setArtistData] = useState([])
-    const history = useHistory()
+    const history = useNavigate()
 
     useEffect(() => {
         const API_URL = `http://localhost:4000/album/${id}`

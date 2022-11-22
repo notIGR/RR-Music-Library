@@ -6,8 +6,8 @@ import AlbumView from './components/AlbumView'
 import Gallery from './components/Gallery'
 import SearchBar from './components/SearchBar'
 import Spinner from './components/Spinner'
-import { DataContext } from './context/dataContext'
-import { SearchContext } from './context/searchContext'
+import { DataContext } from './context/DataContext'
+import { SearchContext } from './context/SearchContext'
 import { createResource as fetchData } from './helper'
 
 const App = () => {
