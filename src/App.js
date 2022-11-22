@@ -1,5 +1,5 @@
 import './App.css';
-import { useState, useRef } from 'react'
+import React, { useState, useRef } from 'react'
 import Gallery from './components/Gallery'
 import SearchBar from './components/SearchBar'
 import { DataContext } from './context/dataContext'

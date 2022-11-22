@@ -1,4 +1,4 @@
-import { useContext } from 'react'
+import React, { useContext } from 'react'
 import { DataContext } from '../context/dataContext'
 import GalleryItem from './GalleryItem'
 
@@ -12,9 +12,7 @@ const Gallery = () => {
     })
 
     return (
-        <div>
-            {display}
-        </div>
+        { display }
     )
 }
 
