@@ -27,11 +27,11 @@ import AlbumView from './components/AlbumView'
 import ArtistView from './components/ArtistView'
 >>>>>>> origin/with_router
 
-function App() {
-  let [searchTerm, setSearchTerm] = useState('')
-  let [message, setMessage] = useState('Search for Music!')
+  function App() {
+    let [searchTerm, setSearchTerm] = useState('')
+    let [message, setMessage] = useState('Search for Music!')
 <<<<<<< HEAD
-  let [data, setData] = useState(null)
+    let [data, setData] = useState(null)
 =======
 
   const API_URL = `https://itunes.apple.com/search?term=`
@@ -46,38 +46,38 @@ function App() {
   }
 >>>>>>> origin/with_router
 
-  useEffect(() => {
-    if (searchTerm) {
-      document.title=`${searchTerm} Music`
+    useEffect(() => {
+      if (searchTerm) {
+        document.title = `${searchTerm} Music`
 <<<<<<< HEAD
-      console.log(fetchData(searchTerm))
-      setData(fetchData(searchTerm))
-  }
-  }, [searchTerm])
+        console.log(fetchData(searchTerm))
+        setData(fetchData(searchTerm))
+      }
+    }, [searchTerm])
 >>>>>>> origin/with_suspense
 
-  const handleSearch = (e, term) => {
-    e.preventDefault()
-    fetch(`https://itunes.apple.com/search?term=${term}`)
-      .then(response => response.json())
-      .then(resData => {
-        if (resData.results.length > 0) {
-          return setData(resData.results)
-        } else {
-          return setMessage('Not Found.')
-        }
-      })
-      .catch(err => setMessage('An Error has Occurred!'))
-  }
-
-  const renderGallery = () => {
-    if(data){
-      return (
-        <Suspense fallback={<Spinner />}>
-          <Gallery data={data} />
-        </Suspense>
-      )
+    const handleSearch = (e, term) => {
+      e.preventDefault()
+      fetch(`https://itunes.apple.com/search?term=${term}`)
+        .then(response => response.json())
+        .then(resData => {
+          if (resData.results.length > 0) {
+            return setData(resData.results)
+          } else {
+            return setMessage('Not Found.')
+          }
+        })
+        .catch(err => setMessage('An Error has Occurred!'))
     }
+
+    const renderGallery = () => {
+      if (data) {
+        return (
+          <Suspense fallback={<Spinner />}>
+            <Gallery data={data} />
+          </Suspense>
+        )
+      }
 =======
 import { useState, useRef } from 'react'
 import Gallery from './components/Gallery'
@@ -123,20 +123,20 @@ function App() {
     setSearchTerm(term)
     return (<Redirect to="/" />)
 >>>>>>> origin/with_router
-  }
+    }
 
-  return (
-    <div className="App">
+    return (
+      <div className="App">
 <<<<<<< HEAD
 <<<<<<< HEAD
-      <SearchContext.Provider value={{ term: searchInput, handleSearch: handleSearch }}>
-        <SearchBar />
-      </SearchContext.Provider>
-      {message}
+    <SearchContext.Provider value={{ term: searchInput, handleSearch: handleSearch }}>
+      <SearchBar />
+    </SearchContext.Provider>
+    { message }
 <<<<<<< HEAD
-      <DataContext.Provider value={data}>
-        <Gallery />
-      </DataContext.Provider>
+    <DataContext.Provider value={data}>
+      <Gallery />
+    </DataContext.Provider>
 =======
       {renderGallery()}
 >>>>>>> origin/with_suspense
@@ -164,8 +164,8 @@ function App() {
         </Route>
       </Router>
 >>>>>>> origin/with_router
-    </div>
+    </div >
   );
-}
+  }
 
-export default App;
+  export default App;

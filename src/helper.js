@@ -1,7 +1,7 @@
 const fetchSearch = (searchTerm) => {
     return fetch(`http://localhost:4000/main/${searchTerm}`)
-    .then(response => response.json())
-    .then(resData => resData.results)
+        .then(response => response.json())
+        .then(resData => resData.results)
 }
 
 const wrapPromise = (promise) => {
@@ -16,7 +16,7 @@ const wrapPromise = (promise) => {
     })
     return {
         read() {
-            if(status === 'pending') {
+            if (status === 'pending') {
                 throw suspender
             } else if (status === 'error') {
                 throw result
